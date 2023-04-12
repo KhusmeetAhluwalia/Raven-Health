@@ -1,0 +1,89 @@
+const { Builder, By, Key, until } = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
+const { options } = require('selenium-webdriver/chrome');
+const webdriver = require('selenium-webdriver');
+
+const form = new FormData();
+
+function getuser() {
+    return form.get("username");
+}
+
+function getpass() {
+    return form.get("password");
+}
+
+function healthID() {
+    return form.get("health");
+}
+
+function clinicID() {
+    return form.get("CID");
+}
+
+async function extract_csv_data() {
+    const url = 'https://www.fitbit.com/settings/data/export';
+
+    const service = new chrome.ServiceBuilder().build();
+    const driver = await new webdriver.Builder()
+        .withCapabilities(webdriver.Capabilities.chrome())
+        .setChromeService(service)
+        .build();
+
+    await driver.get(url);
+
+    const username_input = await driver.findElement(By.xpath("//input[@type='email']"));
+    const password_input = await driver.findElement(By.xpath("//input[@type='password']"));
+    const submit = await driver.findElement(By.xpath("//form[@id='loginForm']/div/button"));
+
+    username_input.sendKeys(getuser());
+    password_input.sendKeys(getpass());
+
+    submit.click();
+
+    await driver.sleep(5000);
+
+    try {
+        await driver.wait(until.elementLocated(By.xpath("//input[@type='radio' and @value='CURRENT_MONTH']")), 10000);
+
+        const radio_button = await driver.findElement(By.xpath("//input[@type='radio' and @value='CURRENT_MONTH']"));
+        radio_button.click();
+
+        await driver.sleep(2000);
+
+        const now = new Date();
+        const month = now.getMonth() + 1;
+        const year = now.getFullYear();
+        const day = now.getDate();
+
+        if (radio_button.isSelected()) {
+            const download_button = await driver.findElement(By.className("download-button"));
+            download_button.click();
+
+            await driver.sleep(10000);
+        }
+    } catch (error) {
+        console.log("Data Export not found");
+    } else {
+        const download_d = "/Users/user/Downloads";
+        const fiel = await glob(download_d + "/*");
+
+        const filename = fiel.reduce((a, b) => {
+            return fs.statSync(a).ctime.getTime() > fs.statSync(b).ctime.getTime() ? a : b;
+        });
+
+        const dest_folder = "/xampp/htdocs/my_test/CSV/" + clinicID();
+
+        await fs.promises.mkdir(dest_folder, { recursive: true });
+
+        await fs.promises.rename(filename, dest_folder + '/' + healthID() + '.csv');
+
+        await driver.sleep(2000);
+
+        await driver.get('http://localhost/my_test/index.php');
+    }
+
+    await driver.quit();
+}
+
+extract_csv_data();

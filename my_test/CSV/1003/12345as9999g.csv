@@ -1,0 +1,233 @@
+Body
+Date,Weight,BMI,Fat
+"2023-03-01","98","28.63","0"
+"2023-03-02","98","28.63","0"
+"2023-03-03","98","28.63","0"
+"2023-03-04","98","28.63","0"
+"2023-03-05","98","28.63","0"
+"2023-03-06","98","28.63","0"
+"2023-03-07","98","28.63","0"
+"2023-03-08","98","28.63","0"
+"2023-03-09","98","28.63","0"
+"2023-03-10","98","28.63","0"
+"2023-03-11","98","28.63","0"
+"2023-03-12","98","28.63","0"
+"2023-03-13","98","28.63","0"
+"2023-03-14","98","28.63","0"
+"2023-03-15","98","28.63","0"
+"2023-03-16","98","28.63","0"
+"2023-03-17","98","28.63","0"
+
+Foods
+Date,Calories In
+"2023-03-01","0"
+"2023-03-02","0"
+"2023-03-03","0"
+"2023-03-04","0"
+"2023-03-05","0"
+"2023-03-06","0"
+"2023-03-07","0"
+"2023-03-08","0"
+"2023-03-09","0"
+"2023-03-10","0"
+"2023-03-11","0"
+"2023-03-12","0"
+"2023-03-13","0"
+"2023-03-14","0"
+"2023-03-15","0"
+"2023-03-16","0"
+"2023-03-17","0"
+
+Activities
+Date,Calories Burned,Steps,Distance,Floors,Minutes Sedentary,Minutes Lightly Active,Minutes Fairly Active,Minutes Very Active,Activity Calories
+"2023-03-01","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-02","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-03","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-04","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-05","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-06","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-07","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-08","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-09","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-10","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-11","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-12","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-13","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-14","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-15","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-16","2,031","0","0","0","1,440","0","0","0","0"
+"2023-03-17","1,325","0","0","0","939","0","0","0","0"
+
+Sleep
+Start Time,End Time,Minutes Asleep,Minutes Awake,Number of Awakenings,Time in Bed,Minutes REM Sleep,Minutes Light Sleep,Minutes Deep Sleep
+
+Food Log 20230301
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230302
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230303
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230304
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230305
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230306
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230307
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230308
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230309
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230310
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230311
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230312
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230313
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230314
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230315
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230316
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+
+Food Log 20230317
+Daily Totals
+"","Calories","0"
+"","Fat","0 g"
+"","Fiber","0 g"
+"","Carbs","0 g"
+"","Sodium","0 mg"
+"","Protein","0 g"
+"","Water","0 fl oz"
+

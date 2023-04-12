@@ -1,0 +1,90 @@
+const cgi = require('cgi');
+const shutil = require('shutil');
+const dotenv = require('dotenv');
+const os = require('os');
+const datetime = require('datetime');
+const webbrowser = require('webbrowser');
+const glob = require('glob');
+
+const {Builder, By, Key, until} = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
+const chromedriver = require('chromedriver');
+
+dotenv.config();
+const form = cgi.FieldStorage();
+
+function getuser() {
+   const u = form.getvalue("username");
+   return u;
+}
+
+function getpass() {
+   const p = form.getvalue("password");
+   return p;
+}
+
+function healthID() {
+   const h = form.getvalue("health");
+   return h;
+}
+
+function clinicID() {
+   const c = form.getvalue("CID");
+   return c;
+}
+
+console.log('Content-type: text/html\n\n');
+
+async function extract_csv_data() {
+    const url = 'https://www.fitbit.com/settings/data/export';
+
+    // Set up Chrome driver
+    const options = new chrome.Options();
+    options.addArguments('--disable-dev-shm-usage');
+    const service = new chrome.ServiceBuilder(chromedriver.path).build();
+    const driver = await new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(options)
+        .setChromeService(service)
+        .build();
+
+    try {
+        // Navigate to the Fitbit data export page
+        await driver.get(url);
+
+        // Wait until the email input field is present
+        await driver.wait(until.elementLocated(By.xpath("//input[@type='email']")), 10000);
+
+        // Enter the login credentials
+        const username_input = await driver.findElement(By.xpath("//input[@type='email']"));
+        const password_input = await driver.findElement(By.xpath("//input[@type='password']"));
+        const submit_button = await driver.findElement(By.xpath("//form[@id='loginForm']/div/button"));
+        await username_input.sendKeys(getuser());
+        await password_input.sendKeys(getpass());
+        await submit_button.click();
+
+        // Wait until the "Current Month" radio button is present and click it
+        await driver.wait(until.elementLocated(By.xpath("//input[@type='radio' and @value='CURRENT_MONTH']")), 10000);
+        const radio_button = await driver.findElement(By.xpath("//input[@type='radio' and @value='CURRENT_MONTH']"));
+        await radio_button.click();
+
+        // Wait until the "Download" button is present and click it
+        await driver.wait(until.elementLocated(By.className("download-button")), 10000);
+        const download_button = await driver.findElement(By.className("download-button"));
+        await download_button.click();
+
+        // Wait for the file to download
+        await driver.sleep(10000);
+
+        // Get the filename of the downloaded file
+        const download_dir = os.homedir() + "/Downloads";
+        const files = glob.sync(download_dir + "/*");
+        const filename = files.reduce((a, b) => (fs.statSync(a).ctime > fs.statSync(b).ctime ? a : b));
+
+        // Move the file to the destination folder and rename it
+        const dest_folder = "/xampp/htdocs/my_test/CSV/" + clinicID();
+        shutil.move(filename, dest_folder);
+        const csv_dir = dest_folder;
+        const filename2 = glob.sync(csv_dir + "/*").reduce((a, b) => (fs.statSync(a).ctime > fs.statSync(b).ctime ? a : b));
+        const new_file_name = healthID()+ ".csv";
+        os.rename(filename2, dest_folder + "/"
